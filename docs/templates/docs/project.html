@@ -1,0 +1,5 @@
+{% extends 'docs/base.html' %}{% block title %}{{ project.title }} · ТехДок{% endblock %}{% block content %}
+<a class="back" href="{% url 'docs:projects' %}">← Все проекты</a><div class="eyebrow">ДОКУМЕНТАЦИЯ ПРОЕКТА</div><h1>{{ project.title }}</h1><p class="lead">{{ project.description }}</p>
+<form class="search" method="get"><label for="q">Поиск документов</label><div><input id="q" name="q" value="{{ query }}" placeholder="Название или описание"><button>Найти</button>{% if query %}<a href="{{ project.get_absolute_url }}">Сбросить</a>{% endif %}</div></form>
+<div class="section-title"><h2>Опубликованные документы</h2><span>{{ documents|length }} найдено</span></div>
+{% for document in documents %}<a class="doc-row" href="{{ document.get_absolute_url }}"><div><h3>{{ document.title }}</h3><p>{{ document.summary }}</p></div><b>Читать →</b></a>{% empty %}<p class="empty">Документов не найдено.</p>{% endfor %}{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'docs/base.html' %}{% block content %}
+<div class="eyebrow">ЕДИНАЯ БАЗА ЗНАНИЙ</div><h1>Документация,<br>которая всегда под рукой.</h1>
+<p class="lead">Проекты, инструкции и история изменений в одном месте.<br>Выберите проект, чтобы открыть опубликованные документы.</p>
+<div class="stats"><div><strong>{{ projects|length }}</strong> проекта</div><div><strong>{{ document_count }}</strong> документа</div><div><strong>{{ version_count }}</strong> опубликованных версий</div><div><strong>{{ author_count }}</strong> автора</div></div>
+<div class="section-title"><h2>Проекты</h2><span>Каталог документации</span></div><div class="grid">
+{% for project in projects %}<a class="card" href="{{ project.get_absolute_url }}"><span class="tag">ПРОЕКТ / {{ forloop.counter|stringformat:'02d' }}</span><h3>{{ project.title }}</h3><p>{{ project.description }}</p><div class="card-bottom"><span>Документов: {{ project.document_count }}</span><b>Открыть →</b></div></a>{% empty %}<p>Проекты пока не созданы. Добавьте первый в админ-панели.</p>{% endfor %}</div>
+{% endblock %}

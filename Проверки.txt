@@ -1,0 +1,55 @@
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Found 14 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: messages, staticfiles
+  Apply all migrations: admin, auth, contenttypes, docs, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying docs.0001_initial... OK
+test_admin_publication_form (docs.tests.PublicationTests.test_admin_publication_form) ... ok
+test_admin_requires_login (docs.tests.PublicationTests.test_admin_requires_login) ... ok
+test_catalog_and_search (docs.tests.PublicationTests.test_catalog_and_search) ... ok
+test_csrf_is_required_for_admin_post (docs.tests.PublicationTests.test_csrf_is_required_for_admin_post) ... ok
+test_document_with_only_draft_is_hidden (docs.tests.PublicationTests.test_document_with_only_draft_is_hidden) ... ok
+test_draft_is_private_even_with_direct_url (docs.tests.PublicationTests.test_draft_is_private_even_with_direct_url) ... ok
+test_duplicate_number_rejected (docs.tests.PublicationTests.test_duplicate_number_rejected) ... ok
+test_html_is_escaped (docs.tests.PublicationTests.test_html_is_escaped) ... ok
+test_latest_and_historical_version (docs.tests.PublicationTests.test_latest_and_historical_version) ... ok
+test_publication_sets_timestamp_and_makes_visible (docs.tests.PublicationTests.test_publication_sets_timestamp_and_makes_visible) ... ok
+test_published_version_is_immutable (docs.tests.PublicationTests.test_published_version_is_immutable) ... ok
+test_referenced_author_cannot_be_deleted (docs.tests.PublicationTests.test_referenced_author_cannot_be_deleted) ... ok
+test_seed_is_idempotent (docs.tests.PublicationTests.test_seed_is_idempotent) ... ok
+test_unknown_document_returns_404 (docs.tests.PublicationTests.test_unknown_document_returns_404) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.395s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+Демонстрационные данные готовы.
+Демонстрационные данные готовы.
+System check identified no issues (0 silenced).
+No changes detected

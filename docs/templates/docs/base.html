@@ -1,0 +1,7 @@
+{% load static %}<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>{% block title %}ТехДок{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'docs/style.css' %}"></head><body>
+<header><a class="brand" href="{% url 'docs:projects' %}"><span class="mark">ТД</span> ТехДок</a><span class="descriptor">Техническая документация</span><a class="admin" href="{% url 'admin:index' %}">Управление ↗</a></header>
+<main>{% block content %}{% endblock %}</main>
+<footer><span>Система публикации технической документации</span><span>Васильев Арсений Витальевич · Учебный проект</span></footer>
+</body></html>
