@@ -1,5 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
+import json
+from pathlib import Path
 from docs.models import Author, Project, Document, Version
 
 class Command(BaseCommand):
@@ -19,6 +21,10 @@ class Command(BaseCommand):
             ('integration', 'Интеграционный модуль', 'Описание форматов обмена и порядок подключения к учебному интеграционному модулю.', [
                 ('format', 'Формат обмена данными', 'Структура сообщения и правила проверки обязательных полей.', [
                     ('1.0', 'Описана структура сообщения', 'Назначение\nДокумент описывает проектируемый учебный формат обмена; это спецификация, а не реализованный API системы ТехДок.\n\nПоля сообщения\nproject — код проекта.\ndocument — код документа.\nversion — номер версии.\nauthor — имя автора.\ncontent — текст документа.\n\nПроверка данных\nОбязательные поля не должны быть пустыми. Номер версии должен быть уникальным в пределах документа. Текст передаётся в кодировке UTF-8.', 'published')])])]
+        knowledge_path = Path(__file__).resolve().parents[2] / 'knowledge.json'
+        for entry in json.loads(knowledge_path.read_text(encoding='utf-8')):
+            data[0][3].append((entry['slug'], entry['title'], entry['summary'], [
+                ('1.0', 'Добавлена инструкция', entry['content'], 'published')]))
         for slug, title, description, documents in data:
             project, _ = Project.objects.get_or_create(slug=slug, defaults={'title': title, 'description': description})
             for doc_slug, doc_title, summary, versions in documents:

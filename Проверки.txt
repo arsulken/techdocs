@@ -42,7 +42,7 @@ test_seed_is_idempotent (docs.tests.PublicationTests.test_seed_is_idempotent) ..
 test_unknown_document_returns_404 (docs.tests.PublicationTests.test_unknown_document_returns_404) ... ok
 
 ----------------------------------------------------------------------
-Ran 14 tests in 0.395s
+Ran 14 tests in 0.429s
 
 OK
 Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
@@ -51,5 +51,3 @@ Destroying test database for alias 'default' ('file:memorydb_default?mode=memory
 System check identified no issues (0 silenced).
 Демонстрационные данные готовы.
 Демонстрационные данные готовы.
-System check identified no issues (0 silenced).
-No changes detected

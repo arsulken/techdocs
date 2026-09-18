@@ -4,3 +4,8 @@ __pycache__/
 db.sqlite3
 .local-admin.txt
 *.log
+.env
+.env.*
+!.env.example
+*.sqlite3-*
+Доступ.txt
